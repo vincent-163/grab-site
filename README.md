@@ -91,6 +91,23 @@ PATH="$PATH:$HOME/gs-venv/bin"
 ```
 
 
+Using Docker
+---
+
+Use either root or a user in the `docker` group. Replace `<dir>` with whatever directory you want to store the data:
+
+```bash
+docker run -v <dir>:/data -w /data --name grab-site vincent163/grab-site gs-server
+```
+
+This starts `gs-server`, so you don't have to start it again. In order to
+run commands such as `grab-site`, use the following command to get a shell
+into the container first:
+
+```bash
+docker exec -it grab-site bash
+```
+
 
 Install on NixOS
 ---
